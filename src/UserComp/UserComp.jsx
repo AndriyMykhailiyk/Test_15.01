@@ -135,7 +135,6 @@ const Users = () => {
                 Add User
             </button>
 
-            {/* Фільтри */}
             <div className="filters">
                 <div className="department-filter">
                     <h3>Departments</h3>
@@ -203,44 +202,72 @@ const Users = () => {
             {isAddUserPopupOpen && (
                 <div className="popup-overlay">
                     <div className="add-user-popup">
-                        <h2>Add User</h2>
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Name"
-                            value={newUser.name}
-                            onChange={handleNewUserChange}
-                        />
-                        <select
-                            name="status"
-                            value={newUser.status}
-                            onChange={handleNewUserChange}
-                        >
-                            <option value="">Select Status</option>
-                            {uniqueStatuses.map((status, index) => (
-                                <option key={index} value={status}>{status}</option>
-                            ))}
-                        </select>
-                        <select
-                            name="department"
-                            value={newUser.department}
-                            onChange={handleNewUserChange}
-                        >
-                            <option value="">Select Department</option>
-                            {uniqueDepartments.map((department, index) => (
-                                <option key={index} value={department}>{department}</option>
-                            ))}
-                        </select>
-                        <select
-                            name="country"
-                            value={newUser.country}
-                            onChange={handleNewUserChange}
-                        >
-                            <option value="">Select Country</option>
-                            {uniqueCountries.map((country, index) => (
-                                <option key={index} value={country}>{country}</option>
-                            ))}
-                        </select>
+                        <h2 className="AddUsersTitle">ADD USER</h2>
+
+                        <div className="wrappInput">
+                        
+                        <div className="wrapOnInput">
+                            
+    <label htmlFor="name" className="LableText">Full Name:</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Name"
+        className="selectAl"
+        value={newUser.name}
+        onChange={handleNewUserChange}
+    />
+</div>
+
+<div className="wrapOnInput">
+    <label htmlFor="status" className="LableText">Status:</label>
+    <select
+        id="status"
+        name="status"
+        className="selectAl"
+        value={newUser.status}
+        onChange={handleNewUserChange}
+    >
+        <option value="" className="optionStyle">Select Status</option>
+        {uniqueStatuses.map((status, index) => (
+            <option key={index} value={status}>{status}</option>
+        ))}
+    </select>
+</div>
+
+<div className="wrapOnInput">
+    <label htmlFor="department" className="LableText">Department:</label>
+    <select
+        id="department"
+        name="department"
+        value={newUser.department}
+        onChange={handleNewUserChange}
+        className="selectAl"
+    >
+        <option value="" className="optionStyle">Select Department</option>
+        {uniqueDepartments.map((department, index) => (
+            <option key={index} value={department}>{department}</option>
+        ))}
+    </select>
+</div>
+
+<div className="wrapOnInput">
+    <label htmlFor="country" className="LableText">Country:</label>
+    <select
+        id="country"
+        name="country"
+        className="selectAl"
+        value={newUser.country}
+        onChange={handleNewUserChange}
+    >
+        <option value="" className="optionStyle">Select Country</option>
+        {uniqueCountries.map((country, index) => (
+            <option key={index} value={country}>{country}</option>
+        ))}
+    </select>
+</div >
+                        </div>
                         <div className="popup-buttons">
                             <button onClick={closeAddUserPopup} className="cancel-button">
                                 Cancel

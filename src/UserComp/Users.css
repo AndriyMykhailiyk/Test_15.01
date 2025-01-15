@@ -93,9 +93,9 @@
 
 .add-user-popup {
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
+    padding: 40px 60px;
+    border: 2px solid black;
+    width: 720px;
     text-align: center;
 }
 
@@ -105,39 +105,79 @@
 
 .add-user-popup input,
 .add-user-popup select {
-    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    height: 48px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.popup-buttons {
-    display: flex;
-    justify-content: space-between;
+.add-user-popup input {
+ 
+    padding: 10px 24px;
+   height: 30px;
 }
 
+.add-user-popup select {
+    height: 52px;
+    padding: 0px 24px;
+
+}
+
+
+.popup-buttons {
+    display: flex;
+gap: 20px;
+justify-content: end;}
+
 .popup-buttons button {
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid gray;
     cursor: pointer;
 }
 
-.cancel-button {
-    background-color: #ff4d4d;
-    color: white;
+
+.wrappInput {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє елементам переноситися на новий рядок */
+    gap: 20px; /* Відступ між елементами */
+    padding-bottom: 60px;
+    padding-top: 60px;
 }
 
-.cancel-button:hover {
-    background-color: #cc0000;
+.wrappInput > * {
+    flex: 1 1 calc(50% - 10px); 
+    box-sizing: border-box; 
 }
 
+.textoverinput {
+    margin: 0;
+}
+
+.wrapOnInput {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.LableText {
+    color: gray;
+    display: flex;
+}
 .add-button {
-    background-color: #4CAF50;
-    color: white;
+    padding: 14px 64px;
 }
 
-.add-button:hover {
-    background-color: #45a049;
+.cancel-button {
+    padding: 14px 27.5px;
+}
+
+.AddUsersTitle {
+    letter-spacing: 10px;
+    font-weight: 500;
+}
+
+.optionStyle {
+    color: gray;
 }
