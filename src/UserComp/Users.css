@@ -1,219 +1,225 @@
 .users-container {
-    margin: 60px 80px;
-    border: 1px solid black;
-    padding: 80px 60px;
-    font-family: Arial, sans-serif;
+  margin: 60px 80px;
+  border: 1px solid black;
+  padding: 80px 60px;
+  font-family: Arial, sans-serif;
 }
 
 .add-user-button {
-    height: 100%;
-    padding: 14px 45px;
-    background-color:transparent;
-    color: black;
-    border: 1px solid gray;
-    cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 20px;
+  height: 100%;
+  padding: 14px 45px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid gray;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .add-user-button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .filters {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .filters h3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .filters label {
-    display: block;
-    margin: 5px 0;
+  display: block;
+  margin: 5px 0;
 }
 
 .filters select {
-    padding: 5px;
-    margin-bottom: 10px;
-    height: 48PX;
-    width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+  height: 48px;
+  width: 200px;
 }
 
 .reset-button {
-    padding: 10px 20px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .reset-button:hover {
-    background-color: #cc0000;
+  background-color: #cc0000;
 }
 
 .user-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  border: 1px solid rgb(234, 233, 233);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .user-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.user-info {
-    flex: 1;
-}
-
-.delete-button {
-    padding: 5px 10px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .delete-button:hover {
-    background-color: #cc0000;
+  background-color: #cc0000;
 }
 
 .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .add-user-popup {
-    background-color: white;
-    padding: 40px 60px;
-    border: 2px solid black;
-    width: 720px;
-    text-align: center;
+  background-color: white;
+  padding: 40px 60px;
+  border: 2px solid black;
+  width: 720px;
+  text-align: center;
 }
 
 .add-user-popup h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .add-user-popup input,
 .add-user-popup select {
-    padding: 10px;
-    margin-bottom: 10px;
-    height: 48px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .add-user-popup input {
- 
-    padding: 10px 24px;
-   height: 30px;
+  padding: 10px 24px;
+  height: 30px;
 }
 
 .add-user-popup select {
-    height: 52px;
-    padding: 0px 24px;
-
+  height: 52px;
+  padding: 0px 24px;
 }
-
 
 .popup-buttons {
-    display: flex;
-gap: 20px;
-justify-content: end;}
-
-.popup-buttons button {
-    border: none;
-    background-color: transparent;
-    border: 1px solid gray;
-    cursor: pointer;
+  display: flex;
+  gap: 20px;
+  justify-content: end;
 }
 
+.popup-buttons button {
+  border: none;
+  background-color: transparent;
+  border: 1px solid gray;
+  cursor: pointer;
+}
 
 .wrappInput {
-    display: flex;
-    flex-wrap: wrap; /* Дозволяє елементам переноситися на новий рядок */
-    gap: 20px; /* Відступ між елементами */
-    padding-bottom: 60px;
-    padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap; /* Дозволяє елементам переноситися на новий рядок */
+  gap: 20px; /* Відступ між елементами */
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 .wrappInput > * {
-    flex: 1 1 calc(50% - 10px); 
-    box-sizing: border-box; 
+  flex: 1 1 calc(50% - 10px);
+  box-sizing: border-box;
 }
 
 .textoverinput {
-    margin: 0;
+  margin: 0;
 }
 
 .wrapOnInput {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .LableText {
-    color: gray;
-    display: flex;
+  color: gray;
+  display: flex;
 }
 .add-button {
-    padding: 14px 64px;
+  padding: 14px 64px;
 }
 
 .cancel-button {
-    padding: 14px 27.5px;
+  padding: 14px 27.5px;
 }
 
 .AddUsersTitle {
-    letter-spacing: 10px;
-    font-weight: 500;
+  letter-spacing: 10px;
+  font-weight: 500;
 }
 
 .optionStyle {
-    color: gray;
+  color: gray;
 }
 
 .basket {
-    padding: 14px;
-    border: 1px solid black;
+  padding: 14px;
+  border: 1px solid black;
 }
 .basket:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .UsersTitle {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 
-    margin: 0;
-    font-weight: 500;
-    letter-spacing: 5PX;
-    font-size: 27PX;
-    display: flex;
-    justify-content: center;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 5px;
+  font-size: 27px;
+  display: flex;
+  justify-content: center;
 }
 
 .wrappBlock {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .wrapBloack {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+.user-info > p {
+  margin: 0;
+  width: 200px;
+}
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 46px;
+}
+
+.headeruserList {
+  border-bottom: 1px solid rgb(234, 233, 233);
+  padding: 28px 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 46px;
+}
+
+.basket1:hover {
+  cursor: pointer;
 }
