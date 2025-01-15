@@ -3,3 +3,14 @@
     padding: 60px 80px;
     border: 1px solid black;
 }
+
+.HeaderBlock {
+    padding-bottom: 80px;
+}
+
+.User {
+    width: 650px;
+}
+.textUser {
+    float: left;
+}
