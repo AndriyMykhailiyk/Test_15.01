@@ -223,3 +223,27 @@
 .basket1:hover {
   cursor: pointer;
 }
+.dropdown-header {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  height: 25px;
+  background-color: #f9f9f9;
+}
+
+.dropdown-list {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.dropdown-item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-item input {
+  margin-right: 10px;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Users.css";
 import Busket from "../svg/basket.svg";
+
 const Users = () => {
   const initialUsers = [
     {
@@ -56,11 +57,19 @@ const Users = () => {
     department: "",
     country: "",
   });
-  const [selectedDepartment, setSelectedDepartment] = useState("");
+  const [isDepartmentDropdownOpen, setIsDepartmentDropdownOpen] =
+    useState(false);
 
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
+
+  useEffect(() => {
+    if (selectedDepartments.length < 2) {
+      setSelectedStatus("");
+      setSelectedCountry("");
+    }
+  }, [selectedDepartments]);
 
   const handleDepartmentChange = (department) => {
     if (selectedDepartments.includes(department)) {
@@ -143,29 +152,44 @@ const Users = () => {
 
       <div className="wrapBloack">
         <p>
-          Please add at least 3 departmetns to be able to proceed next steps.
+          Please add at least 3 departments to be able to proceed next steps.
         </p>
         <div className="wrappBlock">
           <div className="filters">
             <div className="department-filter">
-              <select
-                value={selectedDepartment}
-                onChange={(e) => setSelectedDepartment(e.target.value)}
+              <div
+                className="dropdown-header"
+                onClick={() =>
+                  setIsDepartmentDropdownOpen(!isDepartmentDropdownOpen)
+                }
               >
-                <option value="">All Departments</option>
-                {uniqueDepartments.map((department, index) => (
-                  <option key={index} value={department}>
-                    {department}
-                  </option>
-                ))}
-              </select>
+                Selected ({selectedDepartments.length})
+              </div>
+              {isDepartmentDropdownOpen && (
+                <div className="dropdown-list">
+                  {uniqueDepartments.map((department, index) => (
+                    <div key={index} className="dropdown-item">
+                      <input
+                        type="checkbox"
+                        id={`department-${index}`}
+                        value={department}
+                        checked={selectedDepartments.includes(department)}
+                        onChange={() => handleDepartmentChange(department)}
+                      />
+                      <label htmlFor={`department-${index}`}>
+                        {department}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="status-filter">
               <select
                 value={selectedStatus}
                 onChange={(e) => setSelectedStatus(e.target.value)}
-                disabled={!selectedDepartment}
+                disabled={selectedDepartments.length < 3}
               >
                 <option value="">All Statuses</option>
                 {uniqueStatuses.map((status, index) => (
@@ -180,7 +204,7 @@ const Users = () => {
               <select
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
-                disabled={selectedDepartments.length < 2}
+                disabled={selectedDepartments.length < 3}
               >
                 <option value="">All Countries</option>
                 {uniqueCountries.map((country, index) => (
