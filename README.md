@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+Це тестове завдання направлене на перевірку ваших навичок у розробці на React. Завдання складається з кількох етапів, включаючи реалізацію інтерфейсу користувача, взаємодію з API, а також функціональність, різних модулів.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1.1 **Створення компонента:** - Створив основний компонент для відображення даних (EditUserPage).
 
-## Available Scripts
+1.2 **Список даних:** - Відобразив списку з стартовими даними, отриманими у файлі з завданням. - Кожен елемент списку містить інформацію про назву, статус, країну, значення. -
 
-In the project directory, you can run:
+1.3 **Форма для введення даних:** - Додав форму в компоненті (EditUser) для введення нових елементів до списку. - Включити перевірку введених даних (перевірка на порожні поля).
 
-### `npm start`
+1.4 **Реакція на події:** - При натисканні на кнопку, "Save", збережено введене значення. - При натисканні на "Undo" — скасовується останні зміни.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2.1 **Кнопка "Undo":** - Додав можливість скасувати останні зміни. Для цього потрібно зберігати попередній стан і відновлювати його при натисканні.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2.2 **Кнопка "Save":** - Зберігаю зміни, передані через форму в локальний стан. - Відключити кнопку, якщо зміни не були зроблені (потрібно обробити стан `disabled`).
 
-### `npm test`
+2.3 **Кнопка для видалення:** - Додав кнопку для видалення елементів із списку. - Забезпечивши підтвердження видалення перед тим, як виконати операцію.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3.1 **Збереження локального стану:** - Використовував `useState` для збереження локальних змін.
 
-### `npm run build`
+Інструкція з запуску проекту:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Клонування репозиторію
+   Скопіюйте посилання на репозиторій з GitHub.
+   Відкрийте термінал і виконайте команду для клонування репозиторію:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   git clone https://github.com/AndriyMykhailiyk/Test_15.01.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Встановлення залежностей
+   Встановіть усі необхідні залежності, використовуючи команду:
 
-### `npm run eject`
+   npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Налаштування середовища (якщо потрібно)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Запуск проекту
+   Для запуску проекту на локальному сервері використайте команду:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Збірка проекту (для продакшн)
+   Для створення продакшн-версії проекту використайте команду:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   npm run build
