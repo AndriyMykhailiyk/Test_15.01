@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './Users.css';
-
+import Busket from '../svg/basket.svg'
 const Users = () => {
     const initialUsers = [
         {
@@ -56,6 +56,7 @@ const Users = () => {
         department: "",
         country: ""
     });
+    const [selectedDepartment, setSelectedDepartment] = useState("");
 
     useEffect(() => {
         localStorage.setItem("users", JSON.stringify(users));
@@ -129,43 +130,40 @@ const Users = () => {
 
     return (
         <div className="users-container">
-            <h1>Users</h1>
+            <h1 className="UsersTitle">USERS</h1>
 
-            <button onClick={openAddUserPopup} className="add-user-button">
-                Add User
-            </button>
+         <div className="wrapBloack">
+<p>Please add at least 3 departmetns to be able to proceed next steps.</p>
+<div className="wrappBlock">
+<div className="filters">
+            <div className="department-filter">
+    <select
+        value={selectedDepartment}
+        onChange={(e) => setSelectedDepartment(e.target.value)}
+    >
+        <option value="">All Departments</option>
+        {uniqueDepartments.map((department, index) => (
+            <option key={index} value={department}>{department}</option>
+        ))}
+    </select>
+</div>
 
-            <div className="filters">
-                <div className="department-filter">
-                    <h3>Departments</h3>
-                    {uniqueDepartments.map((department, index) => (
-                        <label key={index}>
-                            <input
-                                type="checkbox"
-                                checked={selectedDepartments.includes(department)}
-                                onChange={() => handleDepartmentChange(department)}
-                            />
-                            {department}
-                        </label>
-                    ))}
-                </div>
+<div className="status-filter">
+    <select
+        value={selectedStatus}
+        onChange={(e) => setSelectedStatus(e.target.value)}
+        disabled={!selectedDepartment}
+    >
+        <option value="">All Statuses</option>
+        {uniqueStatuses.map((status, index) => (
+            <option key={index} value={status}>{status}</option>
+        ))}
+    </select>
+</div>
 
-                <div className="status-filter">
-                    <h3>Status</h3>
-                    <select
-                        value={selectedStatus}
-                        onChange={(e) => setSelectedStatus(e.target.value)}
-                        disabled={selectedDepartments.length < 2}
-                    >
-                        <option value="">All Statuses</option>
-                        {uniqueStatuses.map((status, index) => (
-                            <option key={index} value={status}>{status}</option>
-                        ))}
-                    </select>
-                </div>
+ 
 
                 <div className="country-filter">
-                    <h3>Country</h3>
                     <select
                         value={selectedCountry}
                         onChange={(e) => setSelectedCountry(e.target.value)}
@@ -178,10 +176,19 @@ const Users = () => {
                     </select>
                 </div>
 
-                <button onClick={resetFilters} className="reset-button">
-                    Reset Filters
-                </button>
+
+<div className="wrapperDelitew">
+    <img src={Busket} alt="basket" className="basket" onClick={resetFilters}/>
+</div>
+
             </div>
+
+            <button onClick={openAddUserPopup} className="add-user-button">
+                Add User
+            </button>
+</div>
+</div>
+            
 
             <div className="user-list">
                 {filteredUsers.map(user => (
